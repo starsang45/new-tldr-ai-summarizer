@@ -1,0 +1,218 @@
+body {
+  background: #0f172a; /* 다크 블루/블랙 */
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.app-container h1 {
+  color: #32cd32; /* 네온 그린 */
+  text-shadow: 0 0 8px rgba(50, 205, 50, 0.7);
+}
+
+.url-input {
+  background: #1e293b;
+  color: white;
+}
+
+/* 전체 컨테이너 */
+.app-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 제목 */
+.app-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem; /* 제목과 입력창 간격 */
+  color: #1e293b;
+}
+
+/* 타이틀 컨테이너 (세로 정렬) */
+/* 타이틀 컨테이너 (세로 정렬) */
+.title-container {
+  display: flex;
+  flex-direction: column; /* 세로 배치 */
+  align-items: center;    /* 중앙 정렬 */
+  margin-bottom: 2rem;
+  
+}
+
+/* 로고 크기 + 네온 효과 */
+.title-logo {
+  width: 80px;   /* 조금 더 크고 */
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
+
+}
+
+
+.title-container h1 {
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+/* 타이틀 글씨 */
+.title-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #22c55e; 
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 0 20px rgba(34, 197, 94, 0.5); 
+  animation: textGlowPulse 1s infinite alternate;
+}
+
+/* 네온 글씨 애니메이션 */
+@keyframes textGlowPulse {
+  from {
+    text-shadow: 0 0 4px rgba(72, 255, 140, 0.6), 
+                 0 0 8px rgba(72, 255, 140, 0.4);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(72, 255, 140, 1), 
+                 0 0 20px rgba(72, 255, 140, 0.8),
+                 0 0 30px rgba(72, 255, 140, 0.6);
+  }
+}
+
+
+/* URL 입력창 */
+.url-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #a7f3d0; /* 연한 네온 그린 테두리 */
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem; /* 입력창과 버튼 간격 */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* 입력창 focus 시 */
+.url-input:focus {
+  border-color: #32cd32; /* 네온 그린 */
+  box-shadow: 0 0 8px rgba(50, 205, 50, 0.7);
+}
+
+/* 입력창이 비어있을 때 깜박이는 효과 */
+.url-input:placeholder-shown {
+  animation: blink-green 1.5s infinite;
+}
+
+@keyframes blink-green {
+  0%   { box-shadow: 0 0 0px rgba(50, 205, 50, 0.4); }
+  50%  { box-shadow: 0 0 12px rgba(50, 205, 50, 0.8); }
+  100% { box-shadow: 0 0 0px rgba(50, 205, 50, 0.4); }
+}
+
+
+/* 버튼 */
+.summarize-btn {
+  background: #32cd32; /* LimeGreen (네온 그린) */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.summarize-btn:hover {
+  background: #28a428; /* hover 시 진한 네온 그린 */
+  box-shadow: 0 4px 12px rgba(50, 205, 50, 0.5);
+}
+
+.summarize-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* 에러 메시지 */
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+/* 결과 카드 */
+.summary-card {
+  margin-top: 2rem;
+  text-align: left;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.summary-card h2 {
+  margin-bottom: 0.5rem;
+  color: #32cd32; /* Summary 헤더도 네온 그린 */
+}
+
+
+/* Summary 헤더 */
+.modal-content h2 {
+  color: #3b82f6; /* 파란 포인트 */
+  margin-bottom: 1rem;
+}
+
+
+
+/* 모달 배경 (페이드 인) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85); /* 더 어두운 배경 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 모달 박스 */
+.modal-content {
+  background: #1e293b; /* 다크 블루/그레이 */
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: scaleUp 0.3s ease;
+  position: relative;
+  color: #f1f5f9; /* 기본 글씨 밝게 */
+}
+
+/* 모달 로고 */
+.modal-logo {
+  display: block;
+  margin: 0 auto 1rem auto; /* 중앙 정렬 */
+  width: 60px;
+  height: auto;
+}
+
+/* X 닫기 버튼 */
+.close-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #22c55e; /* 액션 그린 */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.close-icon:hover {
+  background: #16a34a; /* hover 시 진한 그린 */
+}
