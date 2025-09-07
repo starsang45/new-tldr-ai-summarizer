@@ -1,0 +1,8 @@
+# Treat CSS as generated so it doesn't affect language stats
+*.css linguist-generated=true
+
+# Ensure TypeScript and JavaScript are detected
+*.ts linguist-detectable=true
+*.tsx linguist-detectable=true
+*.js linguist-detectable=true
+*.jsx linguist-detectable=true
