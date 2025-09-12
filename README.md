@@ -1,3 +1,7 @@
+# My Project
+
+![App Demo](./assets/tldr.gif)
+
 TL;DR Summarizer
 📌 Overview
 
@@ -69,6 +73,3 @@ npm run dev
 cd client
 npm run dev
 
-# My Project
-
-![App Demo](./assets/demo.gif)
