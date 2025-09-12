@@ -68,3 +68,7 @@ npm run dev
 # Run frontend (in another terminal)
 cd client
 npm run dev
+
+# My Project
+
+![App Demo](./assets/demo.gif)
